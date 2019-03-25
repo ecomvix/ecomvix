@@ -1,0 +1,23 @@
+<% @cart.product_items.each do |item| %>
+  <ul>
+  <li>
+    <div class="product-item"><a class="product-thumb float-left" href="shop-single.html"><%= link_to image_tag(item.product.image.url, size: "80x80") %></a>
+                  <td>
+    <%= item.quantity %>&times;<%= item.product.title %>
+   
+    
+
+    
+
+      <%= form_for(item) do |f| %>
+                        <%= f.hidden_field :product_id, value: item.product.id %>
+    
+     <div class="form-group">
+
+     <%= @product_item %>
+                             
+                            
+     <% end %>
+
+
+     <% end %>

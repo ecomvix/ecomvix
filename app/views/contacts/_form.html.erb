@@ -1,0 +1,26 @@
+<%= form_for @contact do |f| %>
+<form class="contact-form">
+
+  <%= render 'shared/contact_errors' %>
+
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-name validate', placeholder: 'Name' %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-email validate validate-email', placeholder: 'Email Address' %>
+  </div>
+
+  <div>
+    <%= f.label :message %>
+    <%= f.text_area :message, class: 'form-message validate', placeholder: 'Message' %>
+  </div>
+
+  <div>
+    <%= f.submit 'Send' %>
+  </div>
+</form>
+<% end %>

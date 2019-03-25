@@ -1,0 +1,27 @@
+<header class="secondary">
+<div class="background-image-holder parallax-background overlay" data-stellar-background-ratio="0.9">
+
+</div>
+
+<div class="container align-vertical hero">
+<div class="row">
+<div class="col-md-5 text-left">
+<h1>Your Order</h1>
+
+</div>
+</div><!--end of row-->
+</div><!--end of container-->
+</header>
+
+<br>
+
+<%= render 'form' %>
+
+<br>
+
+<!--  Script for Braintree -->
+<script>
+braintree.setup('CLIENT_TOKEN_FROM_SERVER', 'dropin', {
+  container: 'payment-form'
+});
+</script>

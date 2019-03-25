@@ -1,0 +1,99 @@
+ <!-- NAVBAR WITH RESPONSIVE TOGGLE -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+
+                    <li class="nav-item">
+                        
+
+                        <%= link_to 'Home', root_path, class: 'nav-link' %>
+                    </li>
+
+
+                    <li class="nav-item">
+                       
+
+                        <%= link_to 'Store', shop_path, class: 'nav-link' %>
+                    </li>
+
+                     <li class="nav-item">
+                      <%= link_to 'About', about_path, class: 'nav-link' %>
+                    </li>
+
+                     <li class="navigation">
+              <%= link_to new_contact_path, class: 'nav-link' do %>
+               <i class="fa fa-paper-plane"></i> Contact
+              <% end %>
+              </li>
+
+
+                    <% if current_user_admin? %>
+
+                    <li class="nav-item">
+                        <%= link_to "Orders", admin_orders_path, class: 'nav-link' %>     
+
+                        <%= link_to 'Products', admin_products_path, class: 'nav-link' %>
+                    </li>
+
+                    <% end %>
+
+
+              <li class="nav-item">
+
+            <% if @cart.total_price > 0 %>
+            <%= link_to @cart, class: 'menu-cart' do %>
+             <i class="fa fa-shopping-cart"></i>
+            <%= number_to_currency @cart.total_price %>
+            <% end %>
+            <% else %>
+            <a href="#" class="nav-link"><i class="fa fa-shopping-cart"></i> $0.00</a>
+            <% end %>
+
+
+            </li>
+
+
+
+                  
+
+             </ul>
+              
+
+              <ul class="navbar-nav mx-auto">
+         
+                <% if user_signed_in? %>
+                <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+
+
+                 <% else %>
+
+
+                  <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %></li>
+
+                   <li class="nav-item signbla"></li>
+                   <li class="nav-item">
+                
+                   </li>
+                  <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %></li>
+                  <% end %>
+
+
+                  
+                 
+
+                 
+                   
+
+          
+        </ul>
+                    
+                
+            </div>
+        </div>
+    </nav>

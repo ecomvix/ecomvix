@@ -1,0 +1,50 @@
+<%= form_for @order do |f| %>
+
+  <div class="container">
+    <div class="col-md-10">
+      <h3>Please Enter Your Deatils</h3>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :name %>
+        <%= f.text_field :name, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :email %>
+        <%= f.email_field :email, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :address %>
+        <%= f.text_area :address, cols: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :city %>
+        <%= f.text_field :city, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :country %>
+        <%= f.text_field :country, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+         <div id="payment-form"></div>
+        <%= f.submit 'Place Order' %>
+      </div>
+    </div>
+  </div>
+<% end %>

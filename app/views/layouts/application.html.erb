@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ecomvix</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'https://js.braintreegateway.com/js/braintree-2.24.1.min.js' %>
+
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+    <%= render 'shared/header' %>
+
+
+    <%= yield %>
+
+
+    <%= render 'shared/footer' %>
+
+    <%= js add_gritter(flash[:notice], title: "Modern Store Notification", sticky: false) %>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+ <% @products.each do |product| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+         
+
+             <%= link_to image_tag(product.image.url, class: 'card-img-top img-fluid'), listing_path(product)%>
+
+
+            
+            <div class="card-body">
+
+              <p class="card-text"><%= number_to_currency product.price %></p>
+              <p class="card-text"><%= product.title %></p>
+
+              <p class="card-text"><%= product.description %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                 <%= button_to product_items_path(product_id: product), class: 'btn btn-default' do %>
+                <i class="fa fa-shopping-cart"></i> Add to cart
+                <% end %>
+
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+   

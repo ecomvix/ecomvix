@@ -1,0 +1,32 @@
+<header class="secondary">
+  <div class="background-image-holder parallax-background overlay" data-stellar-background-ratio="0.9">
+
+  </div>
+
+  <div class="container align-vertical hero">
+    <div class="row">
+      <div class="col-md-5 text-left">
+        <h1>Your Cart</h1>
+        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</header>
+
+
+<section class="product-list">
+  <div class="container">
+   <div class="col-md-12">
+     <h2>Carts Details</h2>
+     <br>
+     <%= render 'carts/cart' %>
+     <br>
+     <h5>Total <%= number_to_currency @cart.total_price %></h5>
+     <br>
+     <%= button_to 'Checkout', new_order_path, method: :get %>
+     <%= link_to 'Back to Store', shop_path %>
+     <br>
+     <%= link_to 'Empty Your Cart', @cart, method: :delete, data: {confirm: 'You sure?'} %>
+   </div>
+  </div>
+</section>

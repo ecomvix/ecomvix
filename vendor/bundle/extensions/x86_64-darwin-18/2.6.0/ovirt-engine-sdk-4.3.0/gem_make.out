@@ -1,0 +1,68 @@
+current directory: /Users/romangranskyi/Desktop/Star/ecomvix/vendor/bundle/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+/Users/romangranskyi/.rvm/rubies/ruby-2.6.1/bin/ruby -I /Users/romangranskyi/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190322-98505-1csn6up.rb extconf.rb
+checking for xml2-config... yes
+checking for curl-config... yes
+creating Makefile
+
+current directory: /Users/romangranskyi/Desktop/Star/ecomvix/vendor/bundle/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+make "DESTDIR=" clean
+
+current directory: /Users/romangranskyi/Desktop/Star/ecomvix/vendor/bundle/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+make "DESTDIR="
+compiling ov_error.c
+compiling ov_http_client.c
+ov_http_client.c:392:33: warning: comparison of integers of different signs: 'long' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+        while (pointer - buffer < length && isspace(*pointer)) {
+               ~~~~~~~~~~~~~~~~ ^ ~~~~~~
+ov_http_client.c:651:18: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    ptr->limit = connections;
+               ~ ^~~~~~~~~~~
+ov_http_client.c:845:71: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    context_ptr->code = curl_multi_wait(context_ptr->handle, NULL, 0, timeout, NULL);
+                        ~~~~~~~~~~~~~~~                               ^~~~~~~
+ov_http_client.c:1092:34: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+    if (RHASH_SIZE(ptr->pending) < ptr->limit) {
+        ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+ov_http_client.c:1118:71: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+        while (RARRAY_LEN(ptr->queue) > 0 && RHASH_SIZE(ptr->pending) < ptr->limit) {
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+5 warnings generated.
+compiling ov_http_request.c
+compiling ov_http_response.c
+compiling ov_http_transfer.c
+compiling ov_module.c
+compiling ov_string.c
+compiling ov_xml_reader.c
+ov_xml_reader.c:109:14: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    length = RSTRING_LEN(data);
+           ~ ^~~~~~~~~~~~~~~~~
+/Users/romangranskyi/.rvm/rubies/ruby-2.6.1/include/ruby-2.6.0/ruby/ruby.h:1000:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/romangranskyi/.rvm/rubies/ruby-2.6.1/include/ruby-2.6.0/ruby/ruby.h:996:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ov_xml_reader.c:109:14: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    length = RSTRING_LEN(data);
+           ~ ^~~~~~~~~~~~~~~~~
+/Users/romangranskyi/.rvm/rubies/ruby-2.6.1/include/ruby-2.6.0/ruby/ruby.h:1001:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+compiling ov_xml_writer.c
+ov_xml_writer.c:184:46: warning: incompatible pointer to integer conversion initializing 'const VALUE' (aka 'const unsigned long') with an expression of type 'void *' [-Wint-conversion]
+    return rb_funcall(ptr->io, STRING_ID, 0, NULL);
+                                             ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stddef.h:105:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+/Users/romangranskyi/.rvm/rubies/ruby-2.6.1/include/ruby-2.6.0/ruby/ruby.h:2599:35: note: expanded from macro 'rb_funcall'
+        const VALUE rb_funcall_args[] = {__VA_ARGS__}; \
+                                         ^~~~~~~~~~~
+1 warning generated.
+compiling ovirtsdk4c.c
+linking shared-object ovirtsdk4c.bundle
+
+current directory: /Users/romangranskyi/Desktop/Star/ecomvix/vendor/bundle/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ovirtsdk4c.bundle ./.gem.20190322-98505-gq82xy
